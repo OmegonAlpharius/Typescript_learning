@@ -58,5 +58,8 @@ myTV.previousChannel();
 myTV.previousChannel();
 
 myTV.nextChanel();
+myTV.nextChanel();
+myTV.nextChanel();
+myTV.nextChanel();
 
-myTV.moveToChanel(5);
+myTV.moveToChanel(3);
