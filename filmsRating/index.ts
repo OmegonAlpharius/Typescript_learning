@@ -14,9 +14,9 @@ const movies: IMovie[] = [
   {
     name: "Avengers: Infinity War",
     ratings: {
-      Jack: 9,
+      Jack: 10,
       Jane: 10,
-      John: 10,
+      John: 9,
     },
   },
 ];
@@ -33,7 +33,7 @@ function list(movies: Array<IMovie>): void {
 
   const tableBody: string = movies.reduce((acc, movie, index) => {
     const ratings: Array<number> = Object.values(movie.ratings);
-    const averageRating: number = ratings.reduce((sum: number, value: number): number => sum + value) / ratings.length;
+    const averageRating: number = ratings.reduce((sum, value) => sum + value) / ratings.length;
     return (
       acc +
       `| ${index + 1} | ${movie.name}${" ".repeat(maxLength - movie.name.length)} | ${averageRating.toFixed(
