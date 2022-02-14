@@ -1,13 +1,12 @@
 abstract class Figure {
-  public abstract area: number;
-  public abstract name: string;
+   public abstract name: string;
   abstract calculateArea(): number;
 }
 
 class Circle extends Figure {
   public override name: string;
   private _radius: number;
-  override area: number = 0;
+
 
   constructor(radius: number) {
     super();
@@ -16,14 +15,13 @@ class Circle extends Figure {
   }
 
   override calculateArea(): number {
-    this.area = 2 * Math.PI * this._radius ** 2;
-    return this.area;
+    
+    return 2 * Math.PI * this._radius ** 2;
   }
 }
 
 class Triangle extends Figure {
-  override area: number = 0;
-  public name: string;
+   public name: string;
   private _base: number;
   private _height: number;
   constructor(base: number, height: number) {
@@ -34,8 +32,7 @@ class Triangle extends Figure {
   }
 
   calculateArea(): number {
-    this.area = (this._base / 2) * this._height;
-    return this.area;
+       return  (this._base / 2) * this._height;
   }
 }
 
@@ -48,7 +45,7 @@ class Program {
   public printShapesArea(): void {
     this.shapes.forEach((figure) => {
       figure.calculateArea();
-      console.log(`The area of ${figure.name} is ${figure.area.toFixed(2)}`);
+      console.log(`The area of ${figure.name} is ${ figure.calculateArea().toFixed(2)}`);
     });
   }
 }
