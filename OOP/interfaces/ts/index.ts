@@ -40,6 +40,11 @@ class Square implements ISquare {
 class DoubleSquare extends AbstractDoubleSquare {
   private _squares!: ISquare[];
 
+  constructor() {
+    super();
+    this.area = 0;
+  }
+
   public buildDOubleSquare(square1: ISquare, square2: ISquare): void {
     this._squares = [square1, square2];
   }
